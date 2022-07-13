@@ -9,8 +9,8 @@ public final class HelperCommands extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getCommand("heal").setExecutor(new HealCommand(this));
-        getCommand("feed").setExecutor(new FeedCommand(this));
+        getCommand("heal").setExecutor(new HealCommand());
+        getCommand("feed").setExecutor(new FeedCommand());
     }
 
     @Override

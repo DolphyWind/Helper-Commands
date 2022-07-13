@@ -10,12 +10,6 @@ import org.bukkit.entity.Player;
 
 public class FeedCommand implements CommandExecutor {
 
-    HelperCommands hc;
-
-    public FeedCommand(HelperCommands _hc)
-    {
-        hc = _hc;
-    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -24,11 +18,11 @@ public class FeedCommand implements CommandExecutor {
             if(sender instanceof Player p)
             {
                 p.setFoodLevel(20);
-                hc.getServer().broadcastMessage(ChatColor.GREEN + "Bon Appétit!");
+                sender.sendMessage(ChatColor.GREEN + "Bon Appétit!");
             }
             else
             {
-                hc.getServer().broadcastMessage(ChatColor.RED + "This command can only be run on players!");
+                sender.sendMessage(ChatColor.RED + "This command can only be run on players!");
             }
         }
         else
@@ -38,11 +32,11 @@ public class FeedCommand implements CommandExecutor {
             if(p2 != null)
             {
                 p2.setHealth(20);
-                hc.getServer().broadcastMessage(ChatColor.GREEN + playerName + "'s food level is set to 10 hearts.");
+                sender.sendMessage(ChatColor.GREEN + playerName + "'s food level is set to 10 hearts.");
             }
 
             else
-                hc.getServer().broadcastMessage(ChatColor.RED + "Player named " + playerName + " could not found!");
+                sender.sendMessage(ChatColor.RED + "Player named " + playerName + " could not found!");
         }
         return true;
     }

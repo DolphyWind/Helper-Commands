@@ -11,13 +11,6 @@ import org.checkerframework.checker.units.qual.C;
 
 public class HealCommand implements CommandExecutor {
 
-    HelperCommands hc;
-
-    public HealCommand(HelperCommands _hc)
-    {
-        hc = _hc;
-    }
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -26,11 +19,11 @@ public class HealCommand implements CommandExecutor {
             if(sender instanceof Player p)
             {
                 p.setHealth(20);
-                hc.getServer().broadcastMessage(ChatColor.GREEN + "Your hp is set to 10 hearts.");
+                sender.sendMessage(ChatColor.GREEN + "Your hp is set to 10 hearts.");
             }
             else
             {
-                hc.getServer().broadcastMessage(ChatColor.RED + "This command can only be run on players!");
+                sender.sendMessage(ChatColor.RED + "This command can only be run on players!");
             }
         }
         else
@@ -40,11 +33,11 @@ public class HealCommand implements CommandExecutor {
             if(p2 != null)
             {
                 p2.setHealth(20);
-                hc.getServer().broadcastMessage(ChatColor.GREEN + playerName + "'s hp is set to 10 hearts.");
+                sender.sendMessage(ChatColor.GREEN + playerName + "'s hp is set to 10 hearts.");
             }
 
             else
-                hc.getServer().broadcastMessage(ChatColor.RED + "Player named " + playerName + " could not found!");
+                sender.sendMessage(ChatColor.RED + "Player named " + playerName + " could not found!");
         }
         return true;
     }

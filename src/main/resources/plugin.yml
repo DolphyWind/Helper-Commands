@@ -1,0 +1,13 @@
+name: HelperCommands
+version: '${project.version}'
+main: me.dolphy69.helpercommands.HelperCommands
+api-version: 1.19
+authors: [ Dolphy69 ]
+description: Some helper commands
+commands:
+  heal:
+    description: Heals you or specified player
+    usage: /<command> [Player]
+  feed:
+    description: Feeds you or specified player
+    usage: /<command> [Player]

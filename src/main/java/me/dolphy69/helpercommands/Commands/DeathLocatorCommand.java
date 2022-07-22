@@ -63,6 +63,7 @@ public class DeathLocatorCommand implements TabExecutor {
             completions.add("enable");
             completions.add("disable");
             completions.add("toggle");
+            completions.add("status");
             return completions;
         }
         return null;

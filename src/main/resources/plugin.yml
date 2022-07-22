@@ -7,7 +7,13 @@ description: Some helper commands
 commands:
   heal:
     description: Heals you or specified player
-    usage: /<command> [Player]
+    usage: /<command> [player]
+    default: op
   feed:
     description: Feeds you or specified player
-    usage: /<command> [Player]
+    usage: /<command> [player]
+    default: op
+  deathlocator:
+    description: Enables or disables the death locator. Death locator shows your coords when you die.
+    usage: /<command> [enable|disable|toggle|status]
+    default: op
